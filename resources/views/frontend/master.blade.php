@@ -158,15 +158,15 @@
 
             <div class="row" style="--bs-gutter-x: 0rem">
                 <div class="col-6 bg-danger ps-3 py-2" style="line-height: 1">
-                    <div class="text-light fw-bold fs-5">90.000đ</div>
+                    <div class="text-light fw-bold" style="font-size: 1.5rem">90.000đ</div>
                     <div class="" style="color: #d3d3d3">
-                        <del>420.000đ</del>
-                        <small>-60%</small>
+                        <del style="font-size: .8rem">420.000đ</del>
+                        <small style="font-size: .8rem">-60%</small>
                     </div>
                 </div>
                 <div class="col-6 bg-warning px-4 py-2" style="line-height: 1.1">
-                    <p class="mb-0 fs-5 fw-bold">Ưu đãi giờ vàng</p>
-                    <span class="">Kết thúc sau 1 ngày</span>
+                    <div class="mb-0  fw-bold" style="font-size: 1.5rem">Ưu đãi giờ vàng</div>
+                    <span class="" style="font-size: .8rem">Kết thúc sau 1 ngày</span>
                 </div>
             </div>
 
@@ -641,7 +641,7 @@
             <p style="font-size: 0.9rem"><span>Giá gốc: </span><del>420.000đ</del></p>
             <p class="fw-bold">
                 <span style="font-size: 0.9rem">Giảm còn:</span>
-                <span class="fs-5">99.000đ</span>
+                <span class="">99.000đ</span>
                 <small class="bg-danger text-light">-60%</small>
             </p>
 

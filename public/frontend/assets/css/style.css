@@ -184,7 +184,7 @@ body.modal-open {
         font-size: 12px !important;
     }
     label {
-        font-size: 10px !important;
+        font-size: 11px !important;
     }
     #support span {
         font-size: 10px !important;
@@ -204,8 +204,8 @@ body.modal-open {
     }
 
     svg {
-        width: 15px;
-        height: 15px;
+        width: 18px;
+        height: 18px;
     }
 
     .bg-light.text-center.rounded-circle {
@@ -221,5 +221,9 @@ body.modal-open {
 
     .position-absolute.top-0.translate-middle.badge.rounded-pill.bg-danger.px-1 {
         right: 20px !important;
+    }
+
+    div.mb-0.fw-bold, div.text-light.fw-bold{
+        font-size: 1rem !important;
     }
 }
