@@ -33,7 +33,7 @@
                     <div class="col-6">
                         <div class="d-flex align-items-center">
                             <i class="fas fa-search me-2"></i>
-                            <small class="text-muted fs-6">máy xay</small>
+                            <small class="text-muted ">máy xay</small>
                         </div>
                     </div>
                     <div class="col-6">
@@ -72,16 +72,16 @@
                 <nav class="border-bottom">
                     <ul class="nav justify-content-center">
                         <li class="nav-item fw-bold">
-                            <a href="#" class="nav-link text-dark fs-6">Tổng quan</a>
+                            <a href="#" class="nav-link text-dark">Tổng quan</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#a" class="nav-link text-dark fs-6">Đánh giá</a>
+                            <a href="#a" class="nav-link text-dark">Đánh giá</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link text-dark fs-6">Mô tả</a>
+                            <a href="#" class="nav-link text-dark">Mô tả</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link text-dark fs-6">Đề xuất</a>
+                            <a href="#" class="nav-link text-dark">Đề xuất</a>
                         </li>
                     </ul>
                 </nav>
@@ -124,7 +124,7 @@
                             /* clip-path: polygon(0 0, 85% 0, 100% 50%, 85% 100%, 0 100%); */
                             bottom: 0px;
                         ">
-                    <p class="mb-0 fs-6 text-light fw-bold" style="font-style: italic">
+                    <p class="mb-0  text-light fw-bold" style="font-style: italic">
                         EXTRA
                     </p>
                     <p class="mb-0 text-light" style="line-height: 1">Shipping Voucher</p>
@@ -149,7 +149,7 @@
                             bottom: 0px;
                             left: 115px;
                         ">
-                    <p class="mb-0 fs-6 text-light fw-bold" style="font-style: italic">
+                    <p class="mb-0  text-light fw-bold" style="font-style: italic">
                         BONUS
                     </p>
                     <p class="mb-0 text-light" style="line-height: 1">Hoàn tiền</p>
@@ -159,18 +159,18 @@
             <div class="row" style="--bs-gutter-x: 0rem">
                 <div class="col-6 bg-danger ps-3 py-2" style="line-height: 1">
                     <div class="text-light fw-bold fs-5">90.000đ</div>
-                    <div class="fs-6" style="color: #d3d3d3">
+                    <div class="" style="color: #d3d3d3">
                         <del>420.000đ</del>
                         <small>-60%</small>
                     </div>
                 </div>
                 <div class="col-6 bg-warning px-4 py-2" style="line-height: 1.1">
                     <p class="mb-0 fs-5 fw-bold">Ưu đãi giờ vàng</p>
-                    <span class="fs-6">Kết thúc sau 1 ngày</span>
+                    <span class="">Kết thúc sau 1 ngày</span>
                 </div>
             </div>
 
-            <h3 class="fw-bold fs-6 mt-3 px-2">
+            <h3 class="fw-bold  mt-3 px-2">
                 <span class="badge rounded-pill bg-danger">Sale sốc!!!</span>
                 Máy Xay Đa Năng Osaka Nhật Bản - Máy Xay Sinh Tố,Thịt Cao Cấp-Lưỡi Dao
                 Lớn Không Gỉ Bảo Hành 1 Năm
@@ -194,15 +194,15 @@
                             </polygon>
                         </g>
                     </svg>
-                    <p class="mb-0 fs-6 fw-bold me-2 ms-1">4.8/5</p>
-                    <span class="fs-6 text-primary"> (1.2k) </span>
+                    <p class="mb-0  fw-bold me-2 ms-1">4.8/5</p>
+                    <span class=" text-primary"> (1.2k) </span>
                 </div>
 
-                <div class="col-8 d-flex align-items-center gap-2 px-0">
+                <div class="col-8 d-flex align-items-center gap-2 px-0 ">
                     <p class="mb-0 text-muted">
-                        Đã bán <span class="fs-6 fw-bold">12k</span>
+                        Đã bán <span class=" fw-bold">12k</span>
                     </p>
-                    <p class="mb-0 fs-6 fw-bold" style="color: rgb(28, 191, 192)">
+                    <p class="mb-0  fw-bold" style="color: rgb(28, 191, 192)">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
                             x="0px" y="0px" viewBox="0 0 24 24" style="enable-background: new 0 0 24 24"
                             xml:space="preserve" preserveAspectRatio="none" width="18px" height="18px"
@@ -240,11 +240,11 @@
                         </g>
                     </svg>
 
-                    <p class="mb-0 fw-bold fs-6" style="color: #9c7131">
+                    <p class="mb-0 fw-bold " style="color: #9c7131">
                         Sản phẩm hàng đầu
                     </p>
 
-                    <span class="fs-6" style="color: rgb(150, 117, 67)">Máy xay thịt</span>
+                    <span class="" style="color: rgb(150, 117, 67)">Máy xay thịt</span>
                 </div>
                 <svg width="22" height="22" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
                     <polyline points="15,10 35,25 15,40" stroke="rgb(156, 113, 49)" stroke-width="2" fill="none"
@@ -252,7 +252,7 @@
                 </svg>
             </div>
 
-            <div style="background-color: #f9f9f9" class="d-flex justify-content-evenly mt-2 py-2">
+            <div style="background-color: #f9f9f9" class="d-flex justify-content-evenly mt-2 py-2 " id="support">
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
                         x="0px" y="0px" viewBox="0 0 60 60" style="enable-background: new 0 0 60 60" xml:space="preserve"
@@ -308,15 +308,15 @@
 
         <div id="SECTION2">
             <div class="px-2 py-3 border-bottom">
-                <p class="mb-0 fw-bold fs-6">Hình thức thanh toán</p>
+                <p class="mb-0 fw-bold ">Hình thức thanh toán</p>
                 <span class="text-light fw-bold px-1"
                     style="background-color: green; font-size: 0.7rem; border-radius: 4px">COD</span>
                 <span class="text-muted">Thanh toán bằng tiền mặt (COD)</span>
             </div>
 
             <div class="d-flex justify-content-between align-items-center mt-3 px-2">
-                <p class="mb-0 fw-bold fs-6">Vận chuyển</p>
-                <p class="mb-0 fs-6">
+                <p class="mb-0 fw-bold ">Vận chuyển</p>
+                <p class="mb-0 ">
                     <del class="text-muted me-2">22.200đ </del>
                     <span class="text-danger">Free</span>
                     <svg width="18" height="18" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg"
@@ -332,7 +332,7 @@
                     align="left" />
                 <span class="position-absolute fw-bold" style="top: 4px; left: 15px; color: rgb(72, 190, 190); font-size: 14px;">Voucher
                     giảm phí vận chuyển</span>
-                <p class="mb-0 fs-6 px-2" style="padding-top: 5px">
+                <p class="mb-0  px-2" style="padding-top: 5px">
                     Giảm 5000đ phí vận chuyển đối với các đơn hàng trị giá 25000đ trở lên,
                     giảm 25000đ phí vận chuyển đối với các đơn hàng trị giá 80.000đ trở
                     lên
@@ -340,11 +340,11 @@
             </div>
 
             <div class="py-3 px-2">
-                <p id="a" class="mb-0 fw-bold fs-6">Chính sách đổi trả</p>
+                <p id="a" class="mb-0 fw-bold ">Chính sách đổi trả</p>
                 <span class="text-muted">Trả hàng trong vòng 7 ngày - Hủy đơn dễ dàng - Hoàn hàng miễn
                     phí</span>
 
-                <button class="px-5 py-2 text-light fw-bold fs-6 mt-2 d-block"
+                <button class="px-5 py-2 text-light fw-bold  mt-2 d-block"
                     style="border-radius: 4px; background-color: #fe2b54; border: none">
                     Mua ngay
                 </button>
@@ -368,8 +368,8 @@
                 </span>
             </div>
 
-            <div class="rating d-flex align-items-center gap-2">
-                <span class="fs-6"><b>4.8</b>/5</span>
+            <div class="rating d-flex align-items-center gap-2 ">
+                <span class=""><b>4.8</b>/5</span>
                 <span class="d-flex align-items-center">
                     <svg style="vertical-align: unset" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100"
@@ -457,7 +457,7 @@
             <div class="comments">
                 <div class="d-flex align-items-center gap-1">
                     <img class="" width="40" height="40"
-                        src="./assets/img/default-avatar-profile-icon-vector-260nw-2271804793-removebg-preview.png"
+                        src="{{ asset('frontend/assets/img/default-avatar-profile-icon-vector-260nw-2271804793-removebg-preview.png') }}"
                         alt="" />
                     <span class="fw-bold" style="font-size: 0.9rem">Thanh Huyền </span>
                 </div>
@@ -570,7 +570,7 @@
         <hr style="border: 3px solid rgb(209, 209, 209)" />
 
         <div id="SECTION3">
-            <div class="d-flex align-items-center gap-2">
+            <div class="d-flex align-items-center gap-2 px-1">
                 <div class="bg-light text-center rounded-circle" style="padding: 18px 0; width: 15%">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
                         x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"
@@ -584,7 +584,7 @@
                 </div>
 
                 <div class="info" style="width: 55%">
-                    <p class="fw-bold fs-6 mb-1">Gia dụng 19</p>
+                    <p class="fw-bold  mb-1">Gia dụng 19</p>
                     <p class="mb-0 border"
                         style="
                                 background-color: #eaf5ef;
@@ -610,19 +610,19 @@
 
             <div class="box d-flex justify-content-around py-3">
                 <p class="mb-0" style="line-height: 1">
-                    <span class="fw-bold fs-6">184</span> <br />
+                    <span class="fw-bold ">184</span> <br />
                     <small class="text-muted">Mặt hàng</small>
                 </p>
                 <p class="mb-0" style="line-height: 1">
-                    <span class="fw-bold fs-6">24583</span> <br />
+                    <span class="fw-bold ">24583</span> <br />
                     <small class="text-muted">Đã bán</small>
                 </p>
                 <p class="mb-0" style="line-height: 1">
-                    <span class="fw-bold fs-6">100%</span> <br />
+                    <span class="fw-bold ">100%</span> <br />
                     <small class="text-muted">Tỷ lệ trả lời 24 giờ</small>
                 </p>
                 <p class="mb-0" style="line-height: 1">
-                    <span class="fw-bold fs-6">184</span> <br />
+                    <span class="fw-bold ">184</span> <br />
                     <small class="text-muted">Xuất kho trong 48 giờ </small>
                 </p>
             </div>
@@ -632,7 +632,7 @@
 
         <div id="SECTION4"></div>
 
-        <div id="SECTION5" class="text-center mt-4 bg-light p-3">
+        <div id="SECTION5" class="text-center mt-4 bg-light px-2 py-3">
             <p class="deal-button">
                 <i class="bi bi-lightning"></i> Deal hời - Mua ngay!
             </p>
@@ -697,7 +697,7 @@
                 </form>
             </div>
 
-            <div class="text-start mb-5">
+            <div class="text-start mb-1">
                 <h4><strong>Gia dụng 19</strong></h4>
                 <p>
                     <i class="fas fa-map-marker-alt"></i> <strong>Địa chỉ:</strong> 402 -
