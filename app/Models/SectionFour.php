@@ -12,6 +12,7 @@ class SectionFour extends Model
     protected $fillable = [
         'product_name',
         'short_description',
+        'description',
         'price',
         'discount',
         'end_date',

@@ -45,7 +45,9 @@
 
         <hr style="border: 3px solid rgb(209, 209, 209)" />
 
-        <div id="SECTION5"></div>
+        <div id="SECTION5">
+            {!! $s4->description !!}
+        </div>
 
         <div id="SECTION6" class="text-center mt-4 bg-light px-2 py-3">
             @include('frontend.layouts.includes.section-5')

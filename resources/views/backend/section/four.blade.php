@@ -38,8 +38,7 @@
 
                     <div class="form-group col-lg-12">
                         <label for="short_description" class="form-label">Mô tả chi tiết</label>
-                        <textarea id="description" class="form-control ckeditor" name="description" rows="10">{!! old('description') !!}</textarea>
-
+                        <textarea id="description" class="form-control ckeditor" name="description" rows="10">{!! $four->description  !!}</textarea>
                     </div>
 
                     <div class="form-group mb-3 col-lg-12">
