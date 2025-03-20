@@ -237,6 +237,7 @@ body.modal-open {
 
     .d-flex.position-absolute.justify-content-center.align-items-center.gap-1.py-2.ps-3.z-1 {
         left: 100px !important;
+        width: 26% !important;
     }
 }
 
@@ -244,6 +245,7 @@ body.modal-open {
     .btn.btn-outline-danger.me-2.fw-bold.py-0.px-4 {
         padding: 5px 35px !important;
     }
+
 }
 
 @media (max-width: 350px) {
@@ -261,12 +263,12 @@ i {
     font-size: 12px;
 }
 
-a{
+a {
     text-decoration: none;
     color: black;
 }
 
-ul{
+ul {
     list-style: none;
     padding-left: 0;
 }

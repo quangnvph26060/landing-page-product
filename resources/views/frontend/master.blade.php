@@ -45,7 +45,7 @@
 
         <hr style="border: 3px solid rgb(209, 209, 209)" />
 
-        <div id="SECTION5">
+        <div id="SECTION5" class="px-2">
             {!! $s4->description !!}
         </div>
 
