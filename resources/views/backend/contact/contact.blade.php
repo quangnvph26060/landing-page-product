@@ -31,9 +31,9 @@
                     @foreach ($contacts as $contact)
                         <tr>
                             <td>{{ $contact->id }}</td>
-                            <td>{{ $contact->name }}</td>
+                            <td>{{ $contact->fullname }}</td>
                             <td>{{ $contact->phone }}</td>
-                            <td>{{ $contact->address . ', ' . $contact->ward->name . ', ' . $contact->district->name . ', ' . $contact->province->name }}
+                            <td>{{ $contact->address}}
                             </td>
                             <td>{{ $contact->notes }}</td>
                             <td>{{ $contact->created_at->format('d/m/Y H:i') }}</td>

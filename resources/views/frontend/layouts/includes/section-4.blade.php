@@ -12,7 +12,7 @@
     </div>
 
     <div class="info" style="width: 55%">
-        <p class="fw-bold  mb-1">Gia dụng 19</p>
+        <p class="fw-bold  mb-1">{{ $s3->shop_name }}</p>
         <p class="mb-0 border"
             style="
                     background-color: #eaf5ef;
@@ -29,7 +29,7 @@
                         fill="rgb(79, 171, 125)"></polygon>
                 </g>
             </svg>
-            <span class="fw-bold">4.9</span>
+            <span class="fw-bold">{{ $s3->shop_rating }}</span>
         </p>
     </div>
 
@@ -38,19 +38,19 @@
 
 <div class="box d-flex justify-content-around py-3">
     <p class="mb-0" style="line-height: 1">
-        <span class="fw-bold ">184</span> <br />
+        <span class="fw-bold ">{{ $s3->product_category }}</span> <br />
         <small class="text-muted">Mặt hàng</small>
     </p>
     <p class="mb-0" style="line-height: 1">
-        <span class="fw-bold ">24583</span> <br />
+        <span class="fw-bold ">{{ $s3->sold_count }}</span> <br />
         <small class="text-muted">Đã bán</small>
     </p>
     <p class="mb-0" style="line-height: 1">
-        <span class="fw-bold ">100%</span> <br />
+        <span class="fw-bold ">{{ $s3->response_rate_24h }}</span> <br />
         <small class="text-muted">Tỷ lệ trả lời 24 giờ</small>
     </p>
     <p class="mb-0" style="line-height: 1">
-        <span class="fw-bold ">184</span> <br />
+        <span class="fw-bold ">{{ $s3->ship_within_48h }}</span> <br />
         <small class="text-muted">Xuất kho trong 48 giờ </small>
     </p>
 </div>

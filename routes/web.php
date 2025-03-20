@@ -3,6 +3,12 @@
 use App\Http\Controllers\Backend\AuthController;
 use App\Http\Controllers\Backend\ContactController;
 use App\Http\Controllers\Backend\SectionConfig;
+use App\Mail\NewContactNotification;
+use App\Models\Config;
+use App\Models\Contact;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,10 +21,6 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/', function () {
-    return view('frontend.master');
-});
 
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
@@ -41,4 +43,74 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('contact', [ContactController::class, 'index'])->name('contact.index');
         Route::post('update-admin-email', [ContactController::class, 'changeEmail'])->name('contact.changeEmail');
     });
+});
+
+Route::get('/', function () {
+
+    $numbers = ["One", "Two", "Three", "Four"];
+
+    foreach ($numbers as $key => $num) {
+        $modelClass = "App\\Models\\Section{$num}";
+
+        if (class_exists($modelClass)) {
+            ${"s" . ($key + 1)} = $modelClass::query()->firstOrCreate([]);
+        }
+    }
+
+
+    $config = Config::query()->firstOrCreate();
+
+    return view('frontend.master', compact('s1', 's2', 's3', 's4', 'config'));
+});
+
+
+Route::post('/submit-contact', function (Request $request) {
+
+    $cacheKey = 'contact_' . $request->phone . '_' . md5($request->name);
+
+    if (Cache::has($cacheKey)) {
+        return response()->json([
+            'message' => 'Bạn chỉ có thể gửi lại sau 5 phút.'
+        ], 429);
+    }
+
+    $credentials = $request->validate(
+        [
+            'fullname'        => 'required|string|max:255',
+            'phone'       => 'required|regex:/^0[0-9]{9,10}$/',
+            'address'     => 'required|string',
+            'notes'     => 'nullable|string',
+        ],
+        [
+            __('request.messages')
+        ],
+        [
+            'fullname'        => 'Tên',
+            'phone'       => 'Số điện thoại',
+            'address'     => 'Địa chỉ',
+            'notes'     => 'Lời nhắn',
+        ]
+    );
+
+    $contact = Contact::where('phone', $credentials['phone'])
+        ->where('fullname', $credentials['fullname'])
+        ->first();
+
+    if ($contact) {
+        // Nếu tồn tại, chỉ cập nhật thời gian
+        $contact->touch();
+    } else {
+        // Nếu chưa có, tạo mới
+        $contact = Contact::create($credentials);
+    }
+
+    // Gửi email thông báo qua queue
+    Mail::to(env('ADMIN_EMAIL'))->queue(new NewContactNotification($contact));
+
+    // Đặt cache chống spam
+    Cache::put($cacheKey, true, now()->addMinutes(5));
+
+    return response()->json([
+        'message' => 'Đặt hàng thành công!',
+    ], 201);
 });

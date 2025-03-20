@@ -203,8 +203,22 @@ if (!function_exists('isActiveMenu')) {
     }
 }
 
+if (!function_exists('calculateDiscountPercentage')) {
+    function calculateDiscountPercentage($originalPrice, $discountedPrice)
+    {
+        // Loại bỏ tất cả ký tự không phải số
+        $originalPrice = (int) preg_replace('/\D/', '', $originalPrice);
+        $discountedPrice = (int) preg_replace('/\D/', '', $discountedPrice);
 
+        // Kiểm tra tránh chia cho 0
+        if ($originalPrice == 0) {
+            return 0;
+        }
 
+        // Tính % giảm giá
+        $discountPercent = (1 - ($discountedPrice / $originalPrice)) * 100;
 
-
-
+        // Làm tròn theo quy tắc thương mại
+        return round($discountPercent);
+    }
+}
