@@ -8,14 +8,38 @@
         <div class="card">
             <div class="card-body">
                 <div class="row">
-                    <div class="form-group mb-3 col-lg-12">
-                        <label for="title" class="form-label">Tiêu đề</label>
-                        <input type="text" name="title" value="{{ $four->title }}" class="form-control">
+
+                    <div class="form-group col-lg-6">
+                        <label for="product_name" class="form-label">Tên sản phẩm</label>
+                        <input type="text" name="product_name" value="{{ $four->product_name }}" class="form-control">
                     </div>
 
-                    <div class="form-group mb-3 col-lg-12">
-                        <label for="title" class="form-label">Ảnh Slider</label>
-                        <div class="input-images pb-3"></div>
+                    <div class="form-group col-lg-2">
+                        <label for="price" class="form-label">Giá sản phẩm</label>
+                        <input type="text" name="price" value="{{ $four->price }}" class="form-control">
+                    </div>
+
+                    <div class="form-group col-lg-2">
+                        <label for="discount" class="form-label">Giá giảm</label>
+                        <input type="text" name="discount" value="{{ $four->discount }}" class="form-control">
+                    </div>
+
+                    <div class="form-group col-lg-2">
+                        <label for="end_date" class="form-label">Thời gian kết thúc</label>
+                        <input type="date" name="end_date" value="{{ $four->end_date->format('Y-m-d') }}"
+                            class="form-control">
+                    </div>
+
+                    <div class="form-group col-lg-12">
+                        <label for="short_description" class="form-label">Mô tả ngắn</label>
+                        <input type="text" name="short_description" value="{{ $four->short_description }}"
+                            class="form-control">
+                    </div>
+
+                    <div class="form-group col-lg-12">
+                        <label for="short_description" class="form-label">Mô tả chi tiết</label>
+                        <textarea id="description" class="form-control ckeditor" name="description" rows="10">{!! old('description') !!}</textarea>
+
                     </div>
 
                     <div class="form-group mb-3 col-lg-12">
@@ -24,12 +48,7 @@
                         <div class="container-options">
                             @forelse ($four->options ?? [] as $key => $option)
                                 <div class="row input-group {{ !$loop->first ? 'mt-2' : '' }}">
-                                    <div class="col-lg-3">
-                                        <input type="text" name="options[{{ $key }}][title]"
-                                            class="form-control" value="{{ $option['title'] }}"
-                                            placeholder="ví dụ: Mua 5 điếu: 100.000đ">
-                                    </div>
-                                    <div class="col-lg-8">
+                                    <div class="col-lg-11">
                                         <input value="{{ $option['content'] }}" type="text"
                                             name="options[{{ $key }}][content]" class="form-control"
                                             placeholder="Nội dung">
@@ -46,11 +65,7 @@
                                 </div>
                             @empty
                                 <div class="row input-group">
-                                    <div class="col-lg-3">
-                                        <input type="text" name="options[0][title]" class="form-control" value=""
-                                            placeholder="ví dụ: Mua 5 điếu: 100.000đ">
-                                    </div>
-                                    <div class="col-lg-8">
+                                    <div class="col-lg-11">
                                         <input value="" type="text" name="options[0][content]" class="form-control"
                                             placeholder="Nội dung">
                                     </div>
@@ -62,6 +77,7 @@
                             @endforelse
                         </div>
                     </div>
+
                 </div>
             </div>
             <div class="card-footer d-flex justify-content-end">
@@ -73,7 +89,7 @@
 @endsection
 
 @push('scripts')
-    <script src="{{ asset('backend/assets/js/image-uploader.min.js') }}"></script>
+    <script src="{{ asset('library/ckeditor/ckeditor.js') }}"></script>
     <script>
         $(document).ready(function() {
             submitForm('#myForm', function(response) {
@@ -83,24 +99,13 @@
                 });
             })
 
-            const preloaded = @json($images);
-
-            $('.input-images').imageUploader({
-                preloaded: preloaded,
-                imagesInputName: 'images',
-                preloadedInputName: 'old',
-                maxSize: 2 * 1024 * 1024,
-                maxFiles: 15,
-            });
+            ckeditor('description');
 
             $(".container-options").on("click", ".add-btn", function() {
                 let index = $(".container-options .input-group").length; // Đếm số nhóm input hiện có
                 let newInput = `
                     <div class="row input-group mt-2">
-                        <div class="col-lg-3">
-                            <input value="" type="text" name="options[${index}][title]" class="form-control" placeholder="ví dụ: Mua 5 điếu: 100.000đ">
-                        </div>
-                        <div class="col-lg-8">
+                        <div class="col-lg-11">
                             <input value="" type="text" name="options[${index}][content]" class="form-control" placeholder="Nội dung">
                         </div>
                         <div class="col-lg-1 p-0">
@@ -129,11 +134,6 @@
                     });
                 });
             }
-
         });
     </script>
-@endpush
-
-@push('styles')
-    <link rel="stylesheet" href="{{ asset('backend/assets/css/image-uploader.min.css') }}">
 @endpush

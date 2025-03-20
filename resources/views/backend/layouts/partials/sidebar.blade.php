@@ -30,8 +30,8 @@
                 </a>
             </li>
 
-            <li class="nav-item {{ request()->route('number') == 8 ? 'active' : '' }}">
-                <a href="{{ route('admin.section.config.view', 8) }}">
+            <li class="nav-item {{ request()->route('number') == 5 ? 'active' : '' }}">
+                <a href="{{ route('admin.section.config.view', 5) }}">
                     <p>Cấu Hình Chung</p>
 
                 </a>
@@ -62,12 +62,6 @@
             <li class="nav-item {{ request()->route('number') == 4 ? 'active' : '' }}">
                 <a href="{{ route('admin.section.config.view', 4) }}">
                     <p>Cấu Hình Section 4</p>
-                </a>
-            </li>
-
-            <li class="nav-item {{ request()->route('number') == 5 ? 'active' : '' }}">
-                <a href="{{ route('admin.section.config.view', 5) }}">
-                    <p>Cấu Hình Section 5</p>
                 </a>
             </li>
 

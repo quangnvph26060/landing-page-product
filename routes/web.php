@@ -20,6 +20,10 @@ Route::get('/', function () {
     return view('frontend.master');
 });
 
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});
+
 Route::prefix('admin')->name('admin.')->group(function () {
 
     Route::prefix('auth')->middleware('guest')->controller(AuthController::class)->name('auth.')->group(function () {

@@ -222,9 +222,9 @@ body.modal-open {
         width: 55px;
         height: 50px;
     }
-    .btn.btn-outline-danger.me-2.fw-bold.py-0.px-4 {
+    /* .btn.btn-outline-danger.me-2.fw-bold.py-0.px-4 {
         padding: 5px 10px !important;
-    }
+    } */
 
     .position-absolute.top-0.translate-middle.badge.rounded-pill.bg-danger.px-1 {
         right: 20px !important;
@@ -235,7 +235,25 @@ body.modal-open {
         font-size: 1rem !important;
     }
 
-    .d-flex.position-absolute.justify-content-center.align-items-center.gap-1.py-2.ps-3.z-1{
+    .d-flex.position-absolute.justify-content-center.align-items-center.gap-1.py-2.ps-3.z-1 {
         left: 100px !important;
     }
+}
+
+@media (max-width: 400px) {
+    .btn.btn-outline-danger.me-2.fw-bold.py-0.px-4 {
+        padding: 5px 35px !important;
+    }
+}
+
+
+@media (max-width: 350px) {
+    .btn.btn-outline-danger.me-2.fw-bold.py-0.px-4 {
+        padding: 5px 10px !important;
+    }
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
 }

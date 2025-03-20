@@ -12,7 +12,7 @@ class ContactController extends Controller
 {
     public function index()
     {
-        $contacts = Contact::query()->with('province', 'district', 'ward')->latest()->get();
+        $contacts = Contact::query()->latest()->get();
 
         return view('backend.contact.contact', compact('contacts'));
     }

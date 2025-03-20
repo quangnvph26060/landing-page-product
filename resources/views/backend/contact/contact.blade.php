@@ -22,6 +22,7 @@
                         <th>Tên</th>
                         <th>Số điện thoại</th>
                         <th>Địa chỉ</th>
+                        <th>Lựa chọn</th>
                         <th>Ngày tạo</th>
                         {{-- <th>Hành động</th> --}}
                     </tr>
@@ -34,6 +35,7 @@
                             <td>{{ $contact->phone }}</td>
                             <td>{{ $contact->address . ', ' . $contact->ward->name . ', ' . $contact->district->name . ', ' . $contact->province->name }}
                             </td>
+                            <td>{{ $contact->notes }}</td>
                             <td>{{ $contact->created_at->format('d/m/Y H:i') }}</td>
                             {{-- <td>
                                 <button class="btn btn-danger btn-sm">Xóa</button>
