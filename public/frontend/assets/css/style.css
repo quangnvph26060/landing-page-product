@@ -190,8 +190,9 @@ body.modal-open {
     button {
         font-size: 12px !important;
     }
+
     label {
-        font-size: 11px !important;
+        font-size: 15px !important;
     }
     #support span {
         font-size: 9px !important;
@@ -252,6 +253,10 @@ body.modal-open {
     .btn.btn-outline-danger.me-2.fw-bold.py-0.px-4 {
         padding: 5px 10px !important;
     }
+
+    label{
+        font-size: 11px !important;
+    }
 }
 
 h3 {
@@ -272,3 +277,5 @@ ul {
     list-style: none;
     padding-left: 0;
 }
+
+
