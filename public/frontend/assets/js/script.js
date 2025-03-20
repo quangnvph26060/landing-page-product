@@ -67,10 +67,6 @@ function startCountdown(targetDate) {
     const interval = setInterval(updateCountdown, 1000);
 }
 
-// Đặt ngày đếm ngược (YYYY, MM - 1, DD, HH, MM, SS)
-const saleEndDate = new Date(2025, 2, 20, 23, 59, 59).getTime(); // 20/03/2025 23:59:59
-startCountdown(saleEndDate);
-
 // document.addEventListener("DOMContentLoaded", function () {
 // 	var cartModal = document.getElementById("cartModal");
 

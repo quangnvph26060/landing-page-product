@@ -15,4 +15,15 @@
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+
+@php
+    $saleEndDate = $s4->end_date->format('Y-m-d H:i:s');
+@endphp
+
 <script src="{{ asset('frontend/assets/js/script.js') }}"></script>
+
+<script>
+    const saleEndDate = new Date("{{ $saleEndDate }}").getTime();
+
+    startCountdown(saleEndDate);
+</script>
