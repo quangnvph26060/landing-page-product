@@ -81,9 +81,7 @@ Route::post('/submit-contact', function (Request $request) {
             'address'     => 'required|string',
             'notes'     => 'nullable|string',
         ],
-        [
-            __('request.messages')
-        ],
+        __('request.messages'),
         [
             'fullname'        => 'Tên',
             'phone'       => 'Số điện thoại',
