@@ -39,8 +39,6 @@
         <input type="text" class="mb-3 w-100" placeholder="Số điện thoại" name="phone" required />
         <textarea class="mb-2 w-100" rows="2" placeholder="Địa chỉ" name="address"></textarea>
 
-
-
         @foreach ($s4->options ?? [] as $o)
             <div class="d-flex align-items-center justify-content-start gap-1 mb-1 {{ $loop->last ? 'mb-3' : '' }}">
                 <input class="" type="radio" value="{{ $o['content'] }}" name="notes" id="{{ $o['content'] }}" />

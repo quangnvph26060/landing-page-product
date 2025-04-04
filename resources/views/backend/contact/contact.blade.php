@@ -8,7 +8,7 @@
             <h5 class="card-title fw-bold mb-0">Danh Sách Yêu Cầu</h5>
 
             <form action="{{ route('admin.contact.changeEmail') }}" method="post" class="d-flex gap-2" id="myForm">
-                <input name="email" value="{{ env('ADMIN_EMAIL') }}" type="text" placeholder="Email nhận thông báo"
+                <input name="email" value="{{ config('mail.email') }}" type="text" placeholder="Email nhận thông báo"
                     class="form-control w-auto" style="width: 250px !important;">
                 <button class="btn btn-primary">Thay đổi</button>
             </form>
@@ -33,7 +33,7 @@
                             <td>{{ $contact->id }}</td>
                             <td>{{ $contact->fullname }}</td>
                             <td>{{ $contact->phone }}</td>
-                            <td>{{ $contact->address}}
+                            <td>{{ $contact->address }}
                             </td>
                             <td>{{ $contact->notes }}</td>
                             <td>{{ $contact->created_at->format('d/m/Y H:i') }}</td>
