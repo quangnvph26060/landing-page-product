@@ -103,7 +103,7 @@ Route::post('/submit-contact', function (Request $request) {
     }
 
     // Gửi email thông báo qua queue
-    Mail::to(env('ADMIN_EMAIL'))->queue(new NewContactNotification($contact));
+    Mail::to(config('mail.email'))->queue(new NewContactNotification($contact));
 
     // Đặt cache chống spam
     Cache::put($cacheKey, true, now()->addMinutes(5));

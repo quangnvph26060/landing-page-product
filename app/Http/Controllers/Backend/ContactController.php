@@ -30,10 +30,19 @@ class ContactController extends Controller
         }
 
         $envContent = file_get_contents($envPath);
-        $envContent = preg_replace('/^ADMIN_EMAIL=.*/m', 'ADMIN_EMAIL=' . $request->email, $envContent);
+
+        if (preg_match('/^ADMIN_EMAIL=.*$/m', $envContent)) {
+            $envContent = preg_replace('/^ADMIN_EMAIL=.*$/m', 'ADMIN_EMAIL=' . $request->email, $envContent);
+        } else {
+            $envContent .= "\nADMIN_EMAIL=" . $request->email;
+        }
+
         file_put_contents($envPath, $envContent);
 
+        // Xóa cache để cấu hình mới được load lại
         Artisan::call('config:clear');
+        Artisan::call('cache:clear');
+        Artisan::call('config:cache');
 
         return handleResponse('Cập nhật email thành công!', 200);
     }
