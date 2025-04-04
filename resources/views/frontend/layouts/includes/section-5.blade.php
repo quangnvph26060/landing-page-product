@@ -55,7 +55,7 @@
 </div>
 
 <div class="text-start mb-1">
-    <h4><strong>{{ $s4->product_name }}</strong></h4>
+    <h4><strong>{{ $s3->shop_name }}</strong></h4>
     <p>
         <i class="fas fa-map-marker-alt"></i>
         <strong>Địa chỉ:</strong>

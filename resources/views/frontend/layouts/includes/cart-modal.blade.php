@@ -31,25 +31,16 @@
                 <input type="text" class="mb-3 w-100" placeholder="Số điện thoại" required />
                 <textarea class="mb-3 w-100" rows="2" placeholder="Địa chỉ" required></textarea>
 
-                <div class="d-flex align-items-center justify-content-start gap-1 mb-1">
-                    <input class="" type="radio" name="order" id="option1" />
-                    <label class="form-check-label" for="option1">
-                        Mua 1 Máy: 99.000đ + 30.000 Phí Vận Chuyển
-                    </label>
-                </div>
-
-                <div class="d-flex align-items-center justify-content-start gap-1 mb-1">
-                    <input class="" type="radio" name="order" id="option2" />
-                    <label class="form-check-label" for="option2">
-                        Mua 2 Máy: 198.000đ + Miễn Phí Vận Chuyển
-                    </label>
-                </div>
-                <div class="d-flex align-items-center justify-content-start gap-1 mb-3">
-                    <input class="" type="radio" name="order" id="option3" />
-                    <label class="form-check-label" for="option3">
-                        Mua 3 Máy: 277.000đ + Miễn Phí Vận Chuyển
-                    </label>
-                </div>
+                @foreach ($s4->options ?? [] as $o)
+                    <div
+                        class="d-flex align-items-center justify-content-start gap-1 mb-1 {{ $loop->last ? 'mb-3' : '' }}">
+                        <input class="" type="radio" value="{{ $o['content'] }}" name="notes"
+                            id="option1" />
+                        <label class="form-check-label" for="option1">
+                            {{ $o['content'] }}
+                        </label>
+                    </div>
+                @endforeach
 
                 <button type="submit" class="btn btn-order">Mua Ngay</button>
             </form>
