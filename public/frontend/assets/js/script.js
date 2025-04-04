@@ -80,9 +80,10 @@ function startCountdown(targetDate) {
 // });
 
 $(document).ready(function () {
-    $("#myForm").on("submit", function (e) {
+    $(document).on("submit", ".myForm", function (e) {
         e.preventDefault();
 
+        let formElement = this;
         let form = $(this).serialize();
 
         $.ajax({
@@ -96,7 +97,7 @@ $(document).ready(function () {
                     text: "Đặt hàng thành công.",
                 });
 
-                $("#myForm")[0].reset();
+                formElement.reset();
             },
             error: function (xhr) {
                 if (xhr.status === 422) {

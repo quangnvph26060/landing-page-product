@@ -26,17 +26,18 @@
         </div>
 
         <div class="order-form">
-            <form>
-                <input type="text" class="mb-3 w-100" placeholder="Họ và Tên" required />
-                <input type="text" class="mb-3 w-100" placeholder="Số điện thoại" required />
-                <textarea class="mb-3 w-100" rows="2" placeholder="Địa chỉ" required></textarea>
+            <form class="myForm" method="post">
+                @csrf
+                <input type="text" class="mb-3 w-100" placeholder="Họ và Tên" name="fullname" required />
+                <input type="text" class="mb-3 w-100" placeholder="Số điện thoại" name="phone" required />
+                <textarea class="mb-2 w-100" rows="2" placeholder="Địa chỉ" name="address"></textarea>
 
                 @foreach ($s4->options ?? [] as $o)
                     <div
                         class="d-flex align-items-center justify-content-start gap-1 mb-1 {{ $loop->last ? 'mb-3' : '' }}">
                         <input class="" type="radio" value="{{ $o['content'] }}" name="notes"
-                            id="option1" />
-                        <label class="form-check-label" for="option1">
+                            id="form-2-{{ \Str::slug($o['content']) }}" />
+                        <label class="form-check-label" for="form-2-{{ \Str::slug($o['content']) }}">
                             {{ $o['content'] }}
                         </label>
                     </div>
