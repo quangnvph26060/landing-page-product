@@ -3,9 +3,11 @@
 use App\Http\Controllers\Backend\AuthController;
 use App\Http\Controllers\Backend\ContactController;
 use App\Http\Controllers\Backend\SectionConfig;
+use App\Jobs\SendContactToGoogleSheet;
 use App\Mail\NewContactNotification;
 use App\Models\Config;
 use App\Models\Contact;
+use App\Services\SheetDBService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Mail;
@@ -41,6 +43,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::post('section/{number}', [SectionConfig::class, 'switchPost'])->name('section.config.post');
 
         Route::get('contact', [ContactController::class, 'index'])->name('contact.index');
+        Route::get('sheet-db', [ContactController::class, 'sheetDb'])->name('contact.sheet.db');
         Route::post('update-admin-email', [ContactController::class, 'changeEmail'])->name('contact.changeEmail');
     });
 });
@@ -64,7 +67,7 @@ Route::get('/', function () {
 });
 
 
-Route::post('/submit-contact', function (Request $request) {
+Route::post('/submit-contact', function (Request $request, SheetDBService $sheet) {
 
     $cacheKey = 'contact_' . $request->phone . '_' . md5($request->name);
 
@@ -90,20 +93,9 @@ Route::post('/submit-contact', function (Request $request) {
         ]
     );
 
-    $contact = Contact::where('phone', $credentials['phone'])
-        ->where('fullname', $credentials['fullname'])
-        ->first();
+    $contact = Contact::create($credentials);
 
-    if ($contact) {
-        // Nếu tồn tại, chỉ cập nhật thời gian
-        $contact->touch();
-    } else {
-        // Nếu chưa có, tạo mới
-        $contact = Contact::create($credentials);
-    }
-
-    // Gửi email thông báo qua queue
-    Mail::to(config('mail.email'))->queue(new NewContactNotification($contact));
+    SendContactToGoogleSheet::dispatch($contact);
 
     // Đặt cache chống spam
     Cache::put($cacheKey, true, now()->addMinutes(5));

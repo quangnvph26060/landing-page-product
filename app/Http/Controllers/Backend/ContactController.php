@@ -7,6 +7,7 @@ use App\Models\Contact;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\File;
+use SheetDB\SheetDB;
 
 class ContactController extends Controller
 {
@@ -15,6 +16,11 @@ class ContactController extends Controller
         $contacts = Contact::query()->latest()->get();
 
         return view('backend.contact.contact', compact('contacts'));
+    }
+
+    public function sheetDb()
+    {
+        $sheetdb = new SheetDB('4ur0e3ofn95ep');
     }
 
 
