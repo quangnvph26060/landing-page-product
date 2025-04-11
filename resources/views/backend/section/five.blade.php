@@ -34,6 +34,11 @@
                                 <label for="website" class="form-label">Website</label>
                                 <input type="text" name="website" value="{{ $config->website }}" class="form-control">
                             </div>
+
+                            <div class="form-group mb-3 col-lg-12">
+                                <label for="website" class="form-label">Website</label>
+                                <textarea class="form-control" name="script_head" rows="5" id="script_head">{{ $config->script_head }}</textarea>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -70,8 +75,8 @@
                         <img class="img-fluid img-thumbnail w-100" id="show_icon" style="cursor: pointer"
                             src="{{ showImage($config->icon) }}" alt=""
                             onclick="document.getElementById('icon').click();">
-                        <input type="file" name="icon" id="icon" class="form-control d-none"
-                            accept="image/*" onchange="previewImage(event, 'show_icon')">
+                        <input type="file" name="icon" id="icon" class="form-control d-none" accept="image/*"
+                            onchange="previewImage(event, 'show_icon')">
                     </div>
                     <div class="card-footer d-flex justify-content-end">
                         @include('backend.includes.button-submit')

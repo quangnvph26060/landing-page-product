@@ -9,6 +9,8 @@
 
 
     @include('frontend.layouts.partials.style')
+
+    {!! $config->script_head !!}
 </head>
 
 <body>

@@ -19,6 +19,7 @@ class Config extends Model
         'seo_title',
         'seo_description',
         'seo_keywords',
+        'script_head'
     ];
 
     protected $casts = [
